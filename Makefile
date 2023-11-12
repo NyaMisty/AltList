@@ -15,6 +15,9 @@ AltList_CFLAGS = -fobjc-arc -Wno-tautological-pointer-compare
 ifeq ($(THEOS_PACKAGE_SCHEME),rootless)
 AltList_LDFLAGS += -install_name @rpath/AltList.framework/AltList
 endif
+ifeq ($(THEOS_PACKAGE_SCHEME),roothide)
+AltList_LDFLAGS += -install_name @rpath/AltList.framework/AltList
+endif
 AltList_FRAMEWORKS = MobileCoreServices
 AltList_PRIVATE_FRAMEWORKS = Preferences
 
